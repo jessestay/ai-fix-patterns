@@ -1,0 +1,10 @@
+{
+    "pattern": "Inline comments must end in full-stops",
+    "fix": "sed -i '' 's/\\/\\/ \\([A-Za-z].*[^.!?]\\)$/\\/\\/ \\1./' \"$FILE\"",
+    "success_rate": 0.98,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
