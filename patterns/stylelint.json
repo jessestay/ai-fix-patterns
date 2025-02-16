@@ -1,0 +1,9 @@
+{
+    "pattern": "Could not find \"stylelint-config-standard\"",
+    "fix": "npm install --save-dev stylelint-config-standard",
+    "success_rate": 0.95,
+    "context": {
+        "type": "dependency",
+        "tool": "stylelint"
+    }
+} 
