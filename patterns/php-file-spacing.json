@@ -1,1 +1,10 @@
- 
+{
+    "pattern": "There must be exactly one blank line after the file comment",
+    "fix": "./vendor/bin/phpcbf --standard=WordPress --sniffs=Squiz.Commenting.FileComment \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
