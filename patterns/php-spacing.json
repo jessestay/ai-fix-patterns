@@ -1,0 +1,10 @@
+{
+    "pattern": "Expected 1 space after FUNCTION keyword",
+    "fix": "sed -i '' 's/function\\([^ ]\\)/function \\1/g' \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
