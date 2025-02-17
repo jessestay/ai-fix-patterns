@@ -1,7 +1,7 @@
 {
     "pattern": "'registerBlockVariation' is not defined",
-    "fix": "sed -i '' '1i\\import { registerBlockVariation } from \"@wordpress/blocks\";' \"$FILE\"",
-    "success_rate": 0.9,
+    "fix": "sed -i '' '1i\\import { registerBlockVariation, registerBlockPattern } from \"@wordpress/blocks\";' \"$FILE\"",
+    "success_rate": 0.90,
     "context": {
         "type": "syntax",
         "language": "javascript",

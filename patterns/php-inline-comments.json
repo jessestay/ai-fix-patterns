@@ -1,5 +1,5 @@
 {
-    "pattern": "Inline comments must end in full-stops",
+    "pattern": "Inline comments must end in full-stops, exclamation marks, or question marks",
     "fix": "sed -i '' 's/\\/\\/ \\([A-Za-z].*[^.!?]\\)$/\\/\\/ \\1./' \"$FILE\"",
     "success_rate": 0.98,
     "context": {
