@@ -1,6 +1,6 @@
 {
     "pattern": "There must be exactly one blank line after the file comment",
-    "fix": "sed -i '' '/^\\*\\//a\\' \"$FILE\"",
+    "fix": "printf '%s\\n' 'g/^\\*\\//a' '' '.' w | ed -s \"$FILE\"",
     "success_rate": 0.98,
     "context": {
         "type": "syntax",
