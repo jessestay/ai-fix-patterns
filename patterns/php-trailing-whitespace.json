@@ -1,0 +1,10 @@
+{
+    "pattern": "Whitespace found at end of line",
+    "fix": "sed -i '' 's/[[:space:]]*$//' \"$FILE\"",
+    "success_rate": 0.99,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 

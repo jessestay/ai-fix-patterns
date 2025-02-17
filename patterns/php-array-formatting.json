@@ -1,0 +1,10 @@
+{
+    "pattern": "There should be a comma after the last array item in a multi-line array",
+    "fix": "sed -i '' '/^[[:space:]]*[^,[:space:]]\+[[:space:]]*$/s/$/,/' \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 

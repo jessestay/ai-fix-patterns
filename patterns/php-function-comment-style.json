@@ -1,0 +1,10 @@
+{
+    "pattern": "You must use \"/**\" style comments for a function comment",
+    "fix": "sed -i '' '/^\\s*\\/\\// {N; s/\\/\\/ \\(.*\\)\\n/\\/\\*\\*\\n * \\1\\n *\\/\\n/}' \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
