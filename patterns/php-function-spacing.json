@@ -1,7 +1,7 @@
 {
-    "pattern": "Expected 1 spaces after opening parenthesis",
-    "fix": "sed -i '' 's/\\([a-zA-Z_]*\\)(\\([^[:space:]]\\)/\\1( \\2/g' \"$FILE\"",
-    "success_rate": 0.90,
+    "pattern": "Expected.*spaces.*parenthesis",
+    "fix": "./vendor/bin/phpcbf --standard=WordPress --sniffs=PEAR.Functions.FunctionCallSignature \"$FILE\"",
+    "success_rate": 0.97,
     "context": {
         "type": "syntax",
         "language": "php",

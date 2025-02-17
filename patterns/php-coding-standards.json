@@ -1,0 +1,10 @@
+{
+    "pattern": "PHPCBF CAN FIX THE .* MARKED SNIFF VIOLATIONS AUTOMATICALLY",
+    "fix": "./vendor/bin/phpcbf --standard=WordPress \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
