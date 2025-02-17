@@ -1,7 +1,7 @@
 {
     "pattern": "There must be exactly one blank line after the file comment",
-    "fix": "sed -i '' '/\\*\\//a\\' \"$FILE\"",
-    "success_rate": 0.95,
+    "fix": "sed -i '' '/^\\*\\//a\\' \"$FILE\"",
+    "success_rate": 0.98,
     "context": {
         "type": "syntax",
         "language": "php",

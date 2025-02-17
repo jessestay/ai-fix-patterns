@@ -1,0 +1,10 @@
+{
+    "pattern": "Use Yoda Condition checks, you must",
+    "fix": "sed -i '' -e 's/\\([^!]\\)\\([=<>]\\+\\) *null/null \\2 \\1/g' -e 's/\\([^!]\\)\\([=<>]\\+\\) *false/false \\2 \\1/g' -e 's/\\([^!]\\)\\([=<>]\\+\\) *true/true \\2 \\1/g' \"$FILE\"",
+    "success_rate": 0.95,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 

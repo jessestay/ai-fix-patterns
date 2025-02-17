@@ -1,0 +1,10 @@
+{
+    "pattern": "PHP syntax error: Unclosed '{'",
+    "fix": "./vendor/bin/phpcbf --standard=WordPress \"$FILE\"",
+    "success_rate": 0.90,
+    "context": {
+        "type": "syntax",
+        "language": "php",
+        "tool": "phpcs"
+    }
+} 
