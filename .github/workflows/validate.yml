@@ -1,11 +1,12 @@
-name: Pattern Validation
+name: Validate Patterns
 
 on: [push, pull_request]
 
 jobs:
-  pattern-validation:
+  validate:
     runs-on: ubuntu-latest
     name: Validate Pattern Files
+    
     steps:
       - uses: actions/checkout@v2
       
@@ -13,6 +14,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
+          
+      - name: Install dependencies
+        run: npm install
           
       - name: Install ajv-cli
         run: npm install -g ajv-cli
@@ -24,4 +28,13 @@ jobs:
           for pattern in patterns/*.json; do
             echo "Checking $pattern"
             ajv validate -s schemas/pattern.schema.json -d "$pattern"
-          done 
+          done
+
+      - name: Status Check
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "::set-output name=status::success"
+          else
+            echo "::set-output name=status::failure"
+            exit 1
+          fi 
