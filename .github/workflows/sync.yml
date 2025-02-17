@@ -1,0 +1,47 @@
+name: Sync Patterns
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Sync Pattern Database
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Validate patterns
+        run: npm run validate
+      
+      - name: Sync patterns
+        env:
+          PATTERN_REPO_TOKEN: ${{ secrets.PATTERN_REPO_TOKEN }}
+        run: |
+          # Fetch latest patterns
+          git config --global user.email "ai-fix-bot@users.noreply.github.com"
+          git config --global user.name "AI Fix Bot"
+          
+          # Pull latest changes
+          git pull origin main
+          
+          # Update pattern database
+          node scripts/update-patterns.js
+          
+          # Commit and push if there are changes
+          if [[ -n $(git status --porcelain) ]]; then
+            git add patterns/
+            git commit -m "Auto-sync patterns [skip ci]"
+            git push
+          fi 
